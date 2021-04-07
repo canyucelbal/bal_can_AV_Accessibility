@@ -15,32 +15,6 @@
   </head>
   <body>
     <main id="app">
-      <h1 class="mainTitle">{{ mainMessage }}</h1>
-      <p class="desc">{{descMessage}}</p>
-
-      <ul>
-        <div class="miniCard">
-          <a
-            href="#"
-            onclick="return false;"
-            v-for="mini in minis"
-            @mouseover="showDetail(mini)"
-            @mouseleave="showDetail(false)"
-          >
-            <mini-card :mini="mini" :key="mini.id"> </mini-card>
-          </a>
-        </div>
-      </ul>
-
-      <footer>
-        <section class="bio-data" :class="{'show-bio' : showBioData}">
-          <h1>Model: {{ currentMiniData.model }}</h1>
-          <p>Seats: {{ currentMiniData.seats }}</p>
-          <p>Emission: {{ currentMiniData.emission }}</p>
-          <p>Consumption: {{ currentMiniData.consumption }}</p>
-          <p>Price: {{ currentMiniData.price }}</p>
-        </section>
-      </footer>
     </main>
   </body>
   <script src="js/main.js" type="module"></script>
