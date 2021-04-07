@@ -10,7 +10,7 @@ export default {
   },
 
   template: `<li @click="logClicked">
-        <img :src="'images/' + file.thumbnail" :alt='file.name + " image"' class="miniImage">
+        <img :src="file.thumbnail" :alt="file.name" class="miniImage">
       </li>`,
   created: function () {
     console.log(`Created ${this.file.name}'s card`);
