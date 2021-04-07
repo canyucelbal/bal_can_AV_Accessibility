@@ -4,7 +4,7 @@ export default {
 
   data: function () {
     return {
-      name: this.mini.file,
+      name: this.file.name,
       thumbnail: this.file.thumbnail,
     };
   },
