@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini App</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/master.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <main id="app">
+      <h1 class="mainTitle">{{ mainMessage }}</h1>
+      <p class="desc">{{descMessage}}</p>
+
+      <ul>
+        <div class="miniCard">
+          <a
+            href="#"
+            onclick="return false;"
+            v-for="mini in minis"
+            @mouseover="showDetail(mini)"
+            @mouseleave="showDetail(false)"
+          >
+            <mini-card :mini="mini" :key="mini.id"> </mini-card>
+          </a>
+        </div>
+      </ul>
+
+      <footer>
+        <section class="bio-data" :class="{'show-bio' : showBioData}">
+          <h1>Model: {{ currentMiniData.model }}</h1>
+          <p>Seats: {{ currentMiniData.seats }}</p>
+          <p>Emission: {{ currentMiniData.emission }}</p>
+          <p>Consumption: {{ currentMiniData.consumption }}</p>
+          <p>Price: {{ currentMiniData.price }}</p>
+        </section>
+      </footer>
+    </main>
+  </body>
+  <script src="js/main.js" type="module"></script>
+</html>
