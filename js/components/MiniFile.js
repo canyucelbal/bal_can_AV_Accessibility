@@ -13,7 +13,7 @@ export default {
   template: `
     <router-link :to="'/detail/'+id">
       <div class="mini-file">
-        <img :src="thumbnail" :alt="name" class="miniImage">
+        <img :src="thumbnail" :alt="name" class="img-fluid">
         <p>{{ name }}</p>
       </div>
     </router-link>
