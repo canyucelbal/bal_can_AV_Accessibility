@@ -10,11 +10,12 @@ export default {
       video_is_playing: false,
       player: null,
       fullScreen: false,
+      sound: null
     };
   },
 
   template: `
-    <div class="video-wrapper">
+    <div class="video-wrapper" :class="{'full-screen': fullScreen}">
       <video v-if="file" class="video" ref="video">
         <source :src="file.file_path" type="video/mp4">
         Your browser does not support the video tag.
@@ -40,6 +41,8 @@ export default {
               <i class="fa fa-forward" aria-hidden="true"></i>
             </button>
           </div>
+
+          <input type="range" class="ml-1" min="0" max="1" step="0.1" v-model="sound">
 
           <div class="ml-auto">
             <button class="btn btn-primary btn-sm" @click="fullScreenToggle">
@@ -72,6 +75,9 @@ export default {
         this.$refs.video.pause();
       }
     },
+    sound(n) {
+      this.$refs.video.volume = n
+    }
   },
 
   methods: {
