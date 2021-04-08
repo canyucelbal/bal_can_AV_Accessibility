@@ -15,7 +15,9 @@
   </head>
   <body>
     <main id="app">
-      <mini-file v-for="f in files" :file="f" :key="f.id"></mini-file>
+      <ul class="files">
+        <mini-file v-for="f in files" :file="f" :key="f.id"></mini-file>
+      </ul>
     </main>
   </body>
   <script src="js/main.js" type="module"></script>
