@@ -20,9 +20,11 @@ export default {
   },
 
   template: `
-    <div v-if="files.length > 0" class="row">
-      <div class="col-md-4" v-for="f in files" :key="f.id">
-        <mini-file :file="f"></mini-file>
+    <div class="container-fluid">
+      <div v-if="files.length > 0" class="row">
+        <div class="col-md-4" v-for="f in files" :key="f.id">
+          <mini-file :file="f"></mini-file>
+        </div>
       </div>
     </div>
   `,
