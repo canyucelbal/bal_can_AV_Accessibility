@@ -9,6 +9,7 @@ export default {
       file: null,
       video_is_playing: false,
       player: null,
+      fullScreen: false,
     };
   },
 
@@ -39,6 +40,13 @@ export default {
               <i class="fa fa-forward" aria-hidden="true"></i>
             </button>
           </div>
+
+          <div class="ml-auto">
+            <button class="btn btn-primary btn-sm" @click="fullScreenToggle">
+              <i v-if="fullScreen" class="fa fa-object-group" aria-hidden="true"></i>
+              <i v-else class="fa fa-object-ungroup" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -67,6 +75,9 @@ export default {
   },
 
   methods: {
+    fullScreenToggle: function () {
+      this.fullScreen = !this.fullScreen;
+    },
     togglePlaying: function () {
       this.video_is_playing = !this.video_is_playing;
     },
