@@ -10,12 +10,12 @@ export default {
     };
   },
 
-  template: `<div v-if="file">
-      <video class="video">
-        <source :src="file.file_path" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>`,
+  template: `
+    <video v-if="file" class="video">
+      <source :src="file.file_path" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  `,
 
   mounted: function () {
     console.log('this.id', this.id);
