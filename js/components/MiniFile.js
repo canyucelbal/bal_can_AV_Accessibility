@@ -4,25 +4,15 @@ export default {
 
   data: function () {
     return {
+      id: this.file.id,
       name: this.file.name,
       thumbnail: this.file.thumbnail,
     };
   },
 
-  template: `<li @click="logClicked">
-        <router-link :to="'/detail?id='+file.id">
-          <img :src="file.thumbnail" :alt="file.name" class="miniImage">
+  template: `<li>
+        <router-link :to="'/detail/'+id">
+          <img :src="thumbnail" :alt="name" class="miniImage">
         </router-link>
       </li>`,
-  created: function () {
-    console.log(`Created ${this.file.name}'s card`);
-  },
-
-  methods: {
-    logClicked() {
-      console.log(
-        `Clicked on ${this.file.name}'s component! This will definitely not do anything.`
-      );
-    },
-  },
 };
