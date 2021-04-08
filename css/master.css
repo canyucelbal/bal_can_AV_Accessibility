@@ -1,3 +1,41 @@
+body {
+  line-height: 0;
+}
 
+.video-wrapper {
+  position: relative;
+}
+.video-wrapper .video {
+  width: 100%;
+}
+.video-wrapper .actions {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.video-wrapper .actions .btn-play_pause {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.video-wrapper .actions .bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 40px;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: space-between;
+}
+.video-wrapper:hover .actions {
+  visibility: visible;
+  opacity: 1;
+}
 
 /*# sourceMappingURL=master.css.map */
