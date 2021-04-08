@@ -1,8 +1,20 @@
 import { fetchData } from "./components/DataMiner.js";
 import MiniFile from "./components/MiniFile.js";
+import FileDetail from "./components/FileDetail.js";
 
 (() => {
+  const routes = [
+    { path: '/', component: MiniFile  },
+    { path: '/detail', component: FileDetail }
+  ]
+
+  const router = new VueRouter({
+    routes // short for `routes: routes`
+  })
+
   let vue_vm = new Vue({
+    router: router,
+
     data: {
       mainMessage: "Accessibility",
       descMessage: "You can mouseover on any mini model to see it's details",
