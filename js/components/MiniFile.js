@@ -10,9 +10,12 @@ export default {
     };
   },
 
-  template: `<li>
-        <router-link :to="'/detail/'+id">
-          <img :src="thumbnail" :alt="name" class="miniImage">
-        </router-link>
-      </li>`,
+  template: `
+    <router-link :to="'/detail/'+id">
+      <div class="mini-file">
+        <img :src="thumbnail" :alt="name" class="miniImage">
+        <p>{{ name }}</p>
+      </div>
+    </router-link>
+  `,
 };

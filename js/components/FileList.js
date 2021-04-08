@@ -14,14 +14,16 @@ export default {
   },
 
   mounted: function () {
-    console.log("Vue is mounted, trying a fetch for the initial data");
-
     fetchData("./includes/index.php")
       .then((data) => (this.files = data))
       .catch((err) => console.error(err));
   },
 
-  template: `<ul v-if="files.length > 0" class="files">
-      <mini-file v-for="f in files" :file="f" :key="f.id"></mini-file>
-    </ul>`,
+  template: `
+    <div v-if="files.length > 0" class="row">
+      <div class="col-md-4" v-for="f in files" :key="f.id">
+        <mini-file :file="f"></mini-file>
+      </div>
+    </div>
+  `,
 };
