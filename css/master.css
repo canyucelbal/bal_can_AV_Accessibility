@@ -4,6 +4,10 @@ body {
 
 .video-wrapper {
   position: relative;
+  display: inline-block;
+}
+.video-wrapper.full-screen {
+  display: block;
 }
 .video-wrapper .video {
   width: 100%;
