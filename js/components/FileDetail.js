@@ -15,7 +15,7 @@ export default {
   },
 
   template: `
-    <div class="video-wrapper" :class="{'full-screen': fullScreen}">
+    <div class="video-wrapper element" id="element" :class="{'full-screen': fullScreen}">
       <video v-if="file" class="video" ref="video">
         <source :src="file.file_path" type="video/mp4">
         Your browser does not support the video tag.
@@ -45,7 +45,7 @@ export default {
           <input type="range" class="ml-1" min="0" max="1" step="0.1" v-model="sound">
 
           <div class="ml-auto">
-            <button class="btn btn-primary btn-sm" @click="fullScreenToggle">
+            <button onclick="var fs = document.getElementById('element'); fs.webkitRequestFullscreen();" class="btn btn-primary btn-sm" @click="fullScreenToggle">
               <i v-if="fullScreen" class="fa fa-object-group" aria-hidden="true"></i>
               <i v-else class="fa fa-object-ungroup" aria-hidden="true"></i>
             </button>
