@@ -1,17 +1,40 @@
 body {
   line-height: 0;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#6509a3+0,000000+100 */
+background: rgb(101,9,163) ; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM2NTA5YTMiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-radial-gradient(center, ellipse cover,  rgba(101,9,163,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(101,9,163,1)), color-stop(100%,rgba(0,0,0,1))); /* Chrome4-9,Safari4-5 */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(101,9,163,1) 0%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: -o-radial-gradient(center, ellipse cover,  rgba(101,9,163,1) 0%,rgba(0,0,0,1) 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  rgba(101,9,163,1) 0%,rgba(0,0,0,1) 100%); /* IE10 preview */
+background: radial-gradient(ellipse at center,  rgba(101,9,163,1) 0%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6509a3', endColorstr='#000000',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+
 }
 
 .video-wrapper {
   position: relative;
   display: inline-block;
+  width: 100%;
+  background-color: black;
+  
+  
 
   &.full-screen {
-    display: block;
+    // display: block;
+    // max-width: 90%;
+    
   }
 
   .video {
-    width: 100%;
+    width: 86%;
+    display: block;
+    margin: 0 auto;
+    &.full-screen {
+      width: 100% !important;
+    }
   }
 
   .actions {
@@ -49,4 +72,115 @@ body {
       opacity: 1;
     }
   }
+}
+
+//Buttons
+
+.img-fluid {
+  position: relative;
+  align-items: center;
+}
+
+.fa {
+  color: white;
+}
+
+.btn {
+  background-color:rgba(101,9,163,1);
+  border-color: rgba(101,9,163,1);
+  &:hover {
+    background-color: rgb(154, 81, 202);
+    border-color: rgb(154, 81, 202);
+  }
+}
+
+.btn-outline-primary {
+  margin-left: 8px;
+  margin-right: 15px;
+}
+
+.btn-play_pause {
+  background-color: rgb(154, 81, 202) !important;
+    border-color: rgb(154, 81, 202)  !important;
+}
+
+.btn-sm {
+  margin-left: 10px;
+}
+
+.prev-next {
+  margin-right: 20px;
+}
+
+// Buttons------------------
+
+// Sound Volume
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  input[type='range'] {
+    overflow: hidden;
+    width: 80px;
+    -webkit-appearance: none;
+    background-color: grey;
+  }
+  
+  input[type='range']::-webkit-slider-runnable-track {
+    height: 10px;
+    -webkit-appearance: none;
+    color: rgba(101,9,163,1);
+    margin-top: -1px;
+  }
+  
+  input[type='range']::-webkit-slider-thumb {
+    width: 10px;
+    -webkit-appearance: none;
+    height: 10px;
+    cursor: ew-resize;
+    background: white;
+    box-shadow: -80px 0 0 80px rgba(101,9,163,1);
+  }
+
+}
+
+input[type="range"]::-moz-range-progress {
+background-color: rgba(101,9,163,1); 
+}
+input[type="range"]::-moz-range-track {  
+background-color: grey;
+}
+
+input[type="range"]::-ms-fill-lower {
+background-color: rgba(101,9,163,1); 
+}
+input[type="range"]::-ms-fill-upper {  
+background-color: grey;
+}
+
+// Sound Volume Ends
+
+// Fullscreen
+
+.singleVideo {
+}
+
+
+
+.singleVideo:-webkit-full-screen {
+  width: 100vw;
+  height: 100vh;
+}
+
+.singleVideo:-moz-full-screen {
+  width: 100vw;
+  height: 100vh;
+}
+
+.singleVideo:-ms-fullscreen {
+  width: 100vw;
+  height: 100vh;
+}
+
+.singleVideo:fullscreen {
+  width: 100vw;
+  height: 100vh;
 }
